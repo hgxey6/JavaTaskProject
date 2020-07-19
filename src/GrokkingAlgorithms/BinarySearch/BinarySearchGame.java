@@ -2,7 +2,7 @@ package GrokkingAlgorithms.BinarySearch;
 
 import java.util.Scanner;
 
-// log2 1 000 000  = 20 (Максимальное количество попыток)
+// log2 1 000 000  = 20 (Максимальное количество попыток, если без ошибок)
 public class BinarySearchGame {
     private static void search() {
         Scanner scanner = new Scanner(System.in);
