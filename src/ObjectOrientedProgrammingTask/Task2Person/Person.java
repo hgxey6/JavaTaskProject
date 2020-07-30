@@ -1,4 +1,4 @@
-package ObjectOrientedProgrammingTask.Task2;
+package ObjectOrientedProgrammingTask.Task2Person;
 
 class Person {
     private String fullName;
