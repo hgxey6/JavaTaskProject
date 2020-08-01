@@ -12,6 +12,15 @@ class Person {
     public Person() {
 
     }
+    //Методы
+    public void talk() {
+        System.out.println(fullName + " говорит");
+    }
+
+    public void move() {
+        System.out.println(fullName + " гуляет");
+    }
+
 
     //Геттеры
     public String getFullName() {
@@ -22,6 +31,7 @@ class Person {
         return age;
     }
 
+
     //Сеттеры
     public void setFullName(String fullName) {
         this.fullName = fullName;
@@ -31,11 +41,5 @@ class Person {
         this.age = age;
     }
 
-    public void talk() {
-        System.out.println(fullName + " говорит");
-    }
 
-    public void move() {
-        System.out.println(fullName + " гуляет");
-    }
 }

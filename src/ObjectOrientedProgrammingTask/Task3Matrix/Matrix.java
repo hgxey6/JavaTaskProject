@@ -2,12 +2,14 @@ package ObjectOrientedProgrammingTask.Task3Matrix;
 
 /**
  * Матрицу нельзя создать без указнанной строки(row) и столбца(column)(Math: n && m).
- * Матрица генерирует и заполняет числами типа double(вещественные числа,после запятой
- * первые 3 числа ) от 0 до 100.
+ * Матрица генерирует и заполняет числами типа double(вещественные числа, после запятой
+ * первые 3 числа видны в консоле) от 0 до 100.
  *
  * Класс имеет несколько методов:
- * showTheMatrix выводит на консоль матрицу.
- * matrixAddition является статистическим.
+ * print выводит на консоль матрицу. Для удобства метод статичный и принимает только
+ * один параметр класса Matrix
+ *
+ * matrixAddition сложение матриц.
  * scalarMultiplication умнажает матрицу на указанное число
  **/
 class Matrix {
@@ -31,10 +33,10 @@ class Matrix {
         }
     }
 
-    public void showTheMatrix() {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                System.out.printf("%.3f\t\t", matrix[i][j]);
+    public static void print(Matrix m) {
+        for (int i = 0; i < m.matrix.length; i++) {
+            for (int j = 0; j < m.matrix[0].length; j++) {
+                System.out.printf("%.3f\t\t", m.matrix[i][j]);
             }
             System.out.println();
         }
@@ -42,19 +44,22 @@ class Matrix {
     }
 
     /**
+     * Работает как метод equals в классе String:
+     * матрица1.сложить(матрица2)
+     *
      * Сложение двух матриц
      * Если у двух матриц равны столбцы и строки, то можно сложить их по формуле:
      * С(ij) = A(ij) + B(ij)
      * Если у матриц не равны row && column, мы должны вернуть null.
      */
-    public static Matrix matrixAddition(Matrix mat1, Matrix mat2) {
+    public Matrix matrixAddition(Matrix mat2) {
         Matrix returnMatrix = null;
 
-        if (mat1.row == mat2.row && mat1.column == mat2.column) {
-            Matrix mat3 = new Matrix(mat1.row, mat2.column);
-            for (int i = 0; i < mat1.matrix.length; i++) {
-                for (int j = 0; j < mat1.matrix[0].length; j++) {
-                    mat3.matrix[i][j] = mat1.matrix[i][j] + mat2.matrix[i][j];
+        if (row == mat2.row && column == mat2.column) {
+            Matrix mat3 = new Matrix(row, mat2.column);
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[0].length; j++) {
+                    mat3.matrix[i][j] = matrix[i][j] + mat2.matrix[i][j];
                 }
             }
             returnMatrix = mat3;

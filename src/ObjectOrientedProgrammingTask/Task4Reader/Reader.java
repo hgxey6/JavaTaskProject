@@ -5,7 +5,11 @@ import java.util.Scanner;
 
 /**
  * Решил изменить задачу, и сделать список книг, который ученик взял в библиотеке.
- * Работает исключительно сканером.
+ *
+ * ПРИМЕЧАНИЕ:
+ * РАБОТАЕТ ИСКЛЮЧИТЕЛЬНО С ПОМОЩЬЮ СКАНЕРА!!!
+ * УДАЛЯЕТ ВСЕ ПРОБЕЛЫ, ТАБУЛЯЦИИ И СОХРАНЯЕТ В НИЖНЕМ РЕГИСТРЕ
+ *
  *
  * Как работает:
  * takeBook требует количество книг. После этого мы сканируем каждую книгу и добавляем
@@ -33,7 +37,8 @@ class Reader {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите название книг: ");
         for (int i = 0; i < numberOfBooks; i++) {
-            books.add(in.nextLine());
+            books.add(in.nextLine().replaceAll("\\s+", "")
+                    .toLowerCase());
         }
     }
 
@@ -41,7 +46,8 @@ class Reader {
         int c = 0;
         Scanner scanner = new Scanner(System.in);
         while (c != numbersOfBooks) {
-            String book = scanner.nextLine();
+            String book = scanner.nextLine().replaceAll("\\s+", "")
+                    .toLowerCase();
             if (books.contains(book)) {
                 books.remove(book);
                 c++;

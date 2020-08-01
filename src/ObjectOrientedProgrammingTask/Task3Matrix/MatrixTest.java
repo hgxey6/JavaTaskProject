@@ -6,8 +6,10 @@ public class MatrixTest {
         Matrix secondMatrix = new Matrix(4, 5); //Вторая матрица
 
         firstMatrix.scalarMultiplication(3); //Ужножение на число 3
-        Matrix thirdMatrix = Matrix.matrixAddition(firstMatrix, secondMatrix); // Сложение матриц
-        thirdMatrix.showTheMatrix();// Показать матрицу №3
 
+        Matrix thirdMatrix = firstMatrix.matrixAddition(secondMatrix); // Сложение матриц
+
+        Matrix.print(thirdMatrix);// Показать матрицу №3
+        Matrix.print(firstMatrix.matrixAddition(secondMatrix));//То же самое, без самого объекта
     }
 }

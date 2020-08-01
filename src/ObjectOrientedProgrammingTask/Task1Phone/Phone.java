@@ -1,9 +1,5 @@
 package ObjectOrientedProgrammingTask.Task1Phone;
 
-/*
- * НЕ ВЫПОЛНЕН: (з)Вызвать из конструктора с тремя параметрами конструктор с двумя.
- * ПРИЧИНА: Не знаю как это реализовать.
- */
 class Phone {
     private String number;
     private String model;
@@ -11,8 +7,7 @@ class Phone {
 
     //Конструкторы
     public Phone(String number, String model, double weight) {
-        this.number = number;
-        this.model = model;
+        this(number, model); //Вызов из конструктора 3 параметрами, конструктор с 2
         this.weight = weight;
     }
 
@@ -29,6 +24,7 @@ class Phone {
     public void receiveCall(String name) {
         System.out.println("Звонит " + name);
     }
+
     //Перегруженный метод
     public void receiveCall(String name, String number) {
         System.out.println("Звонит " + name + " , номер телефона: " + number);
