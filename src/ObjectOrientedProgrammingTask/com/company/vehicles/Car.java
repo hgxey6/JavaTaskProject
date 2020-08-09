@@ -8,9 +8,10 @@ public class Car {
     private final String brand;
     private final String carClass;
     private final double weight;
-    private Driver driver; //Водитель может поменяться
+    private Driver driver; //Водителя можно сменить
     private final Engine engine;
 
+    //Конструктор
     public Car(String brand, String carClass, double weight, Driver driver, Engine engine) {
         this.brand = brand;
         this.carClass = carClass;

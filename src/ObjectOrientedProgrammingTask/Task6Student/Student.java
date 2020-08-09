@@ -5,11 +5,15 @@ class Student {
     private int group;
     private double averageMark;
 
-    //Конструкторы
-    public Student() {
-
+    //Конструктор для создания клона объекта
+    public Student(Student ob) {
+        firstName = ob.firstName;
+        lastName = ob.lastName;
+        group = ob.group;
+        averageMark = ob.averageMark;
     }
 
+    //Конструктор
     public Student(String firstName, String lastName, double averageMark, int group) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -17,41 +21,21 @@ class Student {
         this.group = group;
     }
 
-
     //Степендия
-    public int getScholarship(double averageMark) {
-        return (averageMark <= 5) ? 80 : 100;
+    public int getScholarship() {
+        return (averageMark == 5) ? 100 : 80;
     }
 
-
-    //Геттеры
-    public String getName() {
-        return firstName + " " + lastName;
+    //Показать все данные
+    public void info() {
+        System.out.println("Name: " + firstName + " " + lastName);
+        System.out.println("Group: " + group);
+        System.out.println("AverageMark: " + averageMark);
     }
 
-    public int getGroup() {
-        return group;
-    }
-
+    //Геттер для ср. оценки
     public double getAverageMark() {
         return averageMark;
     }
-
-
-    //Сеттеры
-    public void setFirstName() {
-        this.firstName = firstName;
-    }
-
-    public void setLastName() {
-        this.lastName = lastName;
-    }
-
-    public void setGroup() {
-        this.group = group;
-    }
-
-    public void setAverageMark() {
-        this.averageMark = averageMark;
-    }
 }
+

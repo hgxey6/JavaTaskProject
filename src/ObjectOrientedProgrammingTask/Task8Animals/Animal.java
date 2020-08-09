@@ -1,49 +1,52 @@
 package ObjectOrientedProgrammingTask.Task8Animals;
 
 class Animal {
-    private String food;
-    private String location;
-    private String name;
 
+    private final String food;
+    private final String location;
+    private String name = "Животное";
+
+    //Конструктор
     public Animal(String food, String location) {
         this.food = food;
         this.location = location;
     }
 
-
-    public void makeNoise() {
-        System.out.println(getName() + "шумит");
+    //Клон
+    public Animal(Animal object) {
+        food = object.food;
+        location = object.location;
+        name = object.name;
     }
 
-    public void eat() {
-        System.out.println(getName() + "кушает");
+    //Методы
+    public void makeNoise() {
+        System.out.println(name + " шумит");
     }
 
     public void sleep() {
-        System.out.println(getName() + "спит");
+        System.out.println(name + "Животное спит");
     }
 
-    public String getFood() {
-        return food;
+    public void eat() {
+        System.out.println(name + " ест");
     }
 
-    public void setFood(String food) {
-        this.food = food;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+    // Так как name с каждым классом меняется, был добавлен геттер и сеттер
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    //Геттеры
+    public String getFood() {
+        return food;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }

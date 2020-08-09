@@ -3,16 +3,18 @@ package ObjectOrientedProgrammingTask.Task12Store;
 //Создать класс User, содержащий логин, пароль и объект класса Basket.
 // Создать объект класса User.
 public class User {
-    private String login;
+    private final String login;
     private String password;
-    private  Basket basket;
+    private Basket basket;
+
+    public User(String login, String password, Basket basket) {
+        this.login = login;
+        this.password = password;
+        this.basket = basket;
+    }
 
     public String getLogin() {
         return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getPassword() {

@@ -6,9 +6,17 @@ public class Category {
     private final String name;
     private final Product[] products;
 
-    public Category(String name, Product products, int productSum) {
+    public Category(String name, Product[] products, int productSum) {
         //productSum - количество товаров
         this.name = name;
         this.products = new Product[productSum];
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Product[] getProducts() {
+        return products;
     }
 }
